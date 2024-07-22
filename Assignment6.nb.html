@@ -9,9 +9,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
+<meta name="author" content="Nandagopal Panicker" />
 
+<meta name="date" content="2024-07-22" />
 
-<title>Assignment 6: Bird Species Project</title>
+<title>Activity: Bird Species</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -1746,17 +1748,25 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">Assignment 6: Bird Species Project</h1>
+<h1 class="title toc-ignore">Activity: Bird Species</h1>
+<h4 class="author">Nandagopal Panicker</h4>
+<h4 class="date">07/22/2024</h4>
 
 </div>
 
 
 <!-- rnb-text-begin -->
-<p><u><strong>Step 1: Data Cleaning and Pre-processing</strong></u></p>
-<p>The first step in this data analysis is to load in the data-set:</p>
+<div id="set-up" class="section level1">
+<h1>Set Up</h1>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6NiwibmNvbCI6MjYsInN1bW1hcnkiOnsiRGVzY3JpcHRpb24iOlsiZGYgWzYgw5cgMjZdIl19fSwicmRmIjoiSDRzSUFBQUFBQUFBQnUxV1cyL2FNQlIydWJXa2RPdldhWlA2bE1mdEFSb0hLSlMzRmxwMTA5WlZRTlgxMFFRM2lRaDJaRXd2Zjc2YkE3RWhockoyRjJrUGU0aHkvQjJmejhmbkpyZGIzOHJHTndNQWtBYVp6QnBJWjRVSXNoZmRrMklkZ0V4S0xOWkFCdVNqLzUzWXRDT0VYZkZ0aXk4bkZhWG5DVW5yMTVVOVdObXpMV2lac055d3JVWjFQOVlBdWFPNkI4dnhqdjJHWlRYSzFuS04zWURWNVpweUE5YVhheW9OdTZ4NWxJRUhOVnZ6WVI1YkxTZTVVbEMvelF4NVROS2lXOU1JRkxCVVNCcXYxNko0V1paR29jRlBYQ2FwQ3gxS1hMTVRJc2JvcmNhL1RMZDE0dU9nL3hRd2FhMUY0MEtQeHNVcUlXbjg5dkQweW54L2VNMHhNMDhSZHp6ekNpUDJRV05jdmV0dmFKTmVHdENxRldFVndycWUrVVdOQWUxOXExaXJWRlVSS3FRQ0Y2enFlblhjSXRZTE1OT3I0eklCYTh1TjR3RGZJRTRYMTFvWEVVcXcza1Z6MkdvNXlmWEc4YkF6TUllSURVeWZtQXc3bFBVMTdsVjczaEZxL3JwNk9YUFN3dzFKb1htbDQ0VXBGMlhtUFI2dHdHWjJ6NHZxYkJSVVZzVHpweXdIY2h6WjFkK2dlVTZLLzFXdXdpZk1rQmhSTFRweVBEbTFtc2puZ1NpRkl6UlFmZkZud2FRVDRNbi8vM2FQMkNXZU1sbUNocUxWcG1TN0V1eFJkeXo3TDkvMXhRNk9ocUdzaldoVXgzSzZoZTZsMFJkS3VLeUx6U1lLK1pqaHlGWkNuUkE3UGg2ZElRV2xPL2hPaW9ldVJJMGpSUHBuNDJGUFZVU3V5MUQ0c2FXbU1FYmNtNVZMdE4wbmJodUhsSEY1V0JzN1V3K3V6bUxvaFlMbUhTMG9kSGFUZkpNS1J1NVRJazlzNHdDamtYUndvMG1IUTB5NGpORExGdUxvbUhCMmY0N1pTRm5sTHJIdmV0S2ovS1h3c2VuTlp1bG1GdzlEMFZIUjJUSDBTam56bGZtdVQxQ3dvRGhuK01hbktqbEdGL25CWjB4Y2NhRmtZdlBpeFZDU3lkMmFWRXIwc28zcVFPUXFYcTlIdDlFcndnblFTRmFFQkkyK3VHTHBta1c1QStCQk0xbW5ZUlF0WVpUYWlabm5qZGVZQm15UFNlUlp2K2g0WXpJb1FxanAweUZ4bzBNbjBQVGJpdis1T1hsMzZrYnF1OVlMT1JFUFg0MnliSUI2V0FZeTNjYzNzaDVFZ0NieEtZWE1KekpOaGtCSEpVNjVpcjNoMEVBaWs2dURoeDg4WnlveEt3d0FBQT09In0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeSh0aWR5dmVyc2UpXG5saWJyYXJ5KGRjRGF0YSlcbmRhdGEoXCJPcmR3YXlCaXJkc1wiKVxuaGVhZChPcmR3YXlCaXJkcylcbmBgYCJ9 -->
+<pre class="r"><code>library(tidyverse)
+library(dcData)
+data(&quot;OrdwayBirds&quot;)
+head(OrdwayBirds)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6NiwibmNvbCI6MjYsInN1bW1hcnkiOnsiRGVzY3JpcHRpb24iOlsiZGYgWzYgw5cgMjZdIl19fSwicmRmIjoiSDRzSUFBQUFBQUFBQnUxV1cyL2FNQlIydWJXa2ROM1dhWlA2bE1mdEFSb0hLRFJ2TGJUcXBxMnJnS3Jyb3dsdWlFanN5REc5L1BsdURzU0JHTXJhWGFROTdDSEs4WGQ4UGgrZm05eHBmNnRxM3pRQVFCYmtjbXNnbXhjaXlGLzBUc3BOQUhJWnNWZ0RPVkNNL25kaTA0NFFkc1gzVW53RnFhZzhUMGhidjY3dHdkcWVhVUJEaDFYTE5LejZmcXdCY2tkOUQxYmpIZnVXWVZoVlk3bkd0R0I5dWFacXdlWnlUYzB5cTRwSE9YalFNQlVmNXJIVmNwb3JBOVhiekpESEpDVzZEWVVnQVpZS2FlUDFSaFF2dzFBb0ZQaUp5elIxcVV1Sm8zY0R4Qmk5VmZpWDZiWk9YT3dObmdLbXJaVm9YS2pSdUZnbHBJM2ZIcDVlNmU4UHJ6bG0raW5pOWxDL3dvaDlVQmhYNy9vYjJyU1hHalFhWlZpSHNLbG1mbEdqUVhQZktEZHE5YVFJRTZRR0Y2eWFhblhjSXRiM01GT3I0eklGSzh1Tll3L2ZJRTRYMTBvWEVVcXcya1Z6MkdvNXpmWEdIbUo3cFB1SWpYU1g2QXpibEEwVTdsVjczaEdxLzdwNk9YUGF3dzFKb1hpbDRxVXBGMlg2UFE1WFlETzc1MFYxTmdwcUsrTDVVNVlET1k3TSttL1FQQ2ZGL3lwWDZSTm1TSXlvTmczdG9aeGFMZVJ5VDVUQ0VSb2xmZkZud2JRVDRNbi8vM2FQMktXZU1ubUNmTkZxVTdKZENmYXBNNWI5Vit5NVlnZEhmaUJySXhyVnNaeHRvM3RwOUlVU0x1dGlzNFVDUG1ZNHNwVlFOOEMyaThNemxFRFpMcjZUNHFFalVlMElrY0haMk84bkZWSG9NUlI4YkNkVEdDTStuSlZMdE4wbFRnY0hsSEY1V0FmYlV3K3V6bUxvUlFMTk8xcEswTmxOaWkwcUdMbExpVHl4Z3oyTVF1bmdSb3Y2UGlaY1JtaTdqVGc2SnB6ZG4yTVdKbGFGUyt3NlErbFI4Vkw0MkJyT1p1bG1EL3VCNktqbzdCaDZsVGp6bGJtT1M1QzNvRGhuK01hbFNYSzBIbks5ejVnNDRrTHB4QmJGaTZFaWs3czFxWlRvWlJ2VmdjaFZ2RjZQYnFOV2hPMmhVRmFFQkxXQnVHTGxta1c1QStCQk1WbW5RUlF0WVpUWmlabm5qZGVZQW15UFNlVFpvR3dQeDJSVWhvbzZHeEFuT25NQ1RiK3QrRitZazNlblhtUytLNjFRRU9Gd2swbVc5MUFmeXpobUIvaEdsb09JenlROGxZQzVSR1pKRTJoWTRaUW5vZGRzNmtsa2NuUHc4QU4vVm0rWktnd0FBQT09In0= -->
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["bogus"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Timestamp"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Year"],"name":[3],"type":["chr"],"align":["left"]},{"label":["Day"],"name":[4],"type":["chr"],"align":["left"]},{"label":["Month"],"name":[5],"type":["chr"],"align":["left"]},{"label":["CaptureTime"],"name":[6],"type":["chr"],"align":["left"]},{"label":["SpeciesName"],"name":[7],"type":["chr"],"align":["left"]},{"label":["Sex"],"name":[8],"type":["chr"],"align":["left"]},{"label":["Age"],"name":[9],"type":["chr"],"align":["left"]},{"label":["BandNumber"],"name":[10],"type":["chr"],"align":["left"]},{"label":["TrapID"],"name":[11],"type":["chr"],"align":["left"]},{"label":["Weather"],"name":[12],"type":["chr"],"align":["left"]},{"label":["BandingReport"],"name":[13],"type":["chr"],"align":["left"]},{"label":["RecaptureYN"],"name":[14],"type":["chr"],"align":["left"]},{"label":["RecaptureMonth"],"name":[15],"type":["chr"],"align":["left"]},{"label":["RecaptureDay"],"name":[16],"type":["chr"],"align":["left"]},{"label":["Condition"],"name":[17],"type":["chr"],"align":["left"]},{"label":["Release"],"name":[18],"type":["chr"],"align":["left"]},{"label":["Comments"],"name":[19],"type":["chr"],"align":["left"]},{"label":["DataEntryPerson"],"name":[20],"type":["chr"],"align":["left"]},{"label":["Weight"],"name":[21],"type":["chr"],"align":["left"]},{"label":["WingChord"],"name":[22],"type":["chr"],"align":["left"]},{"label":["Temperature"],"name":[23],"type":["chr"],"align":["left"]},{"label":["RecaptureOriginal"],"name":[24],"type":["chr"],"align":["left"]},{"label":["RecapturePrevious"],"name":[25],"type":["chr"],"align":["left"]},{"label":["TailLength"],"name":[26],"type":["chr"],"align":["left"]}],"data":[{"1":".","2":"4/14/2010 13:20:56","3":"1972","4":"16","5":"7","6":"7:00:00","7":"Song Sparrow","8":"U","9":"AHY (After Hatch Year)","10":"107-151187","11":"warbler","12":"none","13":"check mark in record","14":"no check","15":"none","16":"none","17":"none","18":"none","19":"none","20":"Jerald Dosch","21":"","22":"","23":"","24":"","25":"","26":"","_rn_":"3"},{"1":".","2":"","3":"","4":"","5":"","6":"","7":"","8":"","9":"","10":"","11":"","12":"","13":"","14":"","15":"","16":"","17":"","18":"","19":"","20":"Caitlin Baker","21":"","22":"","23":"","24":"","25":"","26":"","_rn_":"4"},{"1":".","2":"5/13/2010 16:00:30","3":"1972","4":"16","5":"7","6":"7:00:00","7":"Song Sparrow","8":"U","9":"AHY (After Hatch Year)","10":"107-151187","11":"Warbler","12":"none","13":"check mark in record","14":"no check","15":"none","16":"none","17":"none","18":"none","19":"none","20":"Caitlin Baker","21":"","22":"","23":"","24":"","25":"","26":"","_rn_":"5"},{"1":".","2":"5/13/2010 16:02:15","3":"1972","4":"16","5":"7","6":"7:00:00","7":"Field Sparrow","8":"U","9":"AHY (After Hatch Year)","10":"1260-74572","11":"Warbler","12":"none","13":"no check mark in record","14":"check or yes","15":"7","16":"9","17":"none","18":"none","19":"none","20":"Caitlin Baker","21":"","22":"","23":"","24":"","25":"","26":"","_rn_":"6"},{"1":".","2":"5/13/2010 16:03:18","3":"1972","4":"16","5":"7","6":"7:00:00","7":"Field Sparrow","8":"U","9":"AHY (After Hatch Year)","10":"1260-74541","11":"Elevator","12":"none","13":"no check mark in record","14":"check or yes","15":"4","16":"25","17":"none","18":"none","19":"none","20":"Caitlin Baker","21":"","22":"","23":"","24":"","25":"","26":"","_rn_":"7"},{"1":".","2":"5/13/2010 16:04:23","3":"1972","4":"16","5":"7","6":"7:00:00","7":"Song Sparrow","8":"U","9":"AHY (After Hatch Year)","10":"107-151188","11":"Elevator","12":"none","13":"check mark in record","14":"no check","15":"none","16":"none","17":"none","18":"none","19":"none","20":"Caitlin Baker","21":"","22":"","23":"","24":"","25":"","26":"","_rn_":"8"}],"options":{"columns":{"min":{},"max":[10],"total":[26]},"rows":{"min":[10],"max":[10],"total":[6]},"pages":{}}}
@@ -1764,11 +1774,179 @@ display: none;
 </div>
 <!-- rnb-frame-end -->
 <!-- rnb-chunk-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3RyKE9yZHdheUJpcmRzKVxuYGBgIn0= -->
+<pre class="r"><code>str(OrdwayBirds)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiJ2RhdGEuZnJhbWUnOlx0MTU4Mjkgb2JzLiBvZiAgMjYgdmFyaWFibGVzOlxuICQgYm9ndXMgICAgICAgICAgICA6IGNociAgXCIuXCIgXCIuXCIgXCIuXCIgXCIuXCIgLi4uXG4gJCBUaW1lc3RhbXAgICAgICAgIDogY2hyICBcIjQvMTQvMjAxMCAxMzoyMDo1NlwiIFwiXCIgXCI1LzEzLzIwMTAgMTY6MDA6MzBcIiBcIjUvMTMvMjAxMCAxNjowMjoxNVwiIC4uLlxuICQgWWVhciAgICAgICAgICAgICA6IGNociAgXCIxOTcyXCIgXCJcIiBcIjE5NzJcIiBcIjE5NzJcIiAuLi5cbiAkIERheSAgICAgICAgICAgICAgOiBjaHIgIFwiMTZcIiBcIlwiIFwiMTZcIiBcIjE2XCIgLi4uXG4gJCBNb250aCAgICAgICAgICAgIDogY2hyICBcIjdcIiBcIlwiIFwiN1wiIFwiN1wiIC4uLlxuICQgQ2FwdHVyZVRpbWUgICAgICA6IGNociAgXCI3OjAwOjAwXCIgXCJcIiBcIjc6MDA6MDBcIiBcIjc6MDA6MDBcIiAuLi5cbiAkIFNwZWNpZXNOYW1lICAgICAgOiBjaHIgIFwiU29uZyBTcGFycm93XCIgXCJcIiBcIlNvbmcgU3BhcnJvd1wiIFwiRmllbGQgU3BhcnJvd1wiIC4uLlxuICQgU2V4ICAgICAgICAgICAgICA6IGNociAgXCJVXCIgXCJcIiBcIlVcIiBcIlVcIiAuLi5cbiAkIEFnZSAgICAgICAgICAgICAgOiBjaHIgIFwiQUhZIChBZnRlciBIYXRjaCBZZWFyKVwiIFwiXCIgXCJBSFkgKEFmdGVyIEhhdGNoIFllYXIpXCIgXCJBSFkgKEFmdGVyIEhhdGNoIFllYXIpXCIgLi4uXG4gJCBCYW5kTnVtYmVyICAgICAgIDogY2hyICBcIjEwNy0xNTExODdcIiBcIlwiIFwiMTA3LTE1MTE4N1wiIFwiMTI2MC03NDU3MlwiIC4uLlxuICQgVHJhcElEICAgICAgICAgICA6IGNociAgXCJ3YXJibGVyXCIgXCJcIiBcIldhcmJsZXJcIiBcIldhcmJsZXJcIiAuLi5cbiAkIFdlYXRoZXIgICAgICAgICAgOiBjaHIgIFwibm9uZVwiIFwiXCIgXCJub25lXCIgXCJub25lXCIgLi4uXG4gJCBCYW5kaW5nUmVwb3J0ICAgIDogY2hyICBcImNoZWNrIG1hcmsgaW4gcmVjb3JkXCIgXCJcIiBcImNoZWNrIG1hcmsgaW4gcmVjb3JkXCIgXCJubyBjaGVjayBtYXJrIGluIHJlY29yZFwiIC4uLlxuICQgUmVjYXB0dXJlWU4gICAgICA6IGNociAgXCJubyBjaGVja1wiIFwiXCIgXCJubyBjaGVja1wiIFwiY2hlY2sgb3IgeWVzXCIgLi4uXG4gJCBSZWNhcHR1cmVNb250aCAgIDogY2hyICBcIm5vbmVcIiBcIlwiIFwibm9uZVwiIFwiN1wiIC4uLlxuICQgUmVjYXB0dXJlRGF5ICAgICA6IGNociAgXCJub25lXCIgXCJcIiBcIm5vbmVcIiBcIjlcIiAuLi5cbiAkIENvbmRpdGlvbiAgICAgICAgOiBjaHIgIFwibm9uZVwiIFwiXCIgXCJub25lXCIgXCJub25lXCIgLi4uXG4gJCBSZWxlYXNlICAgICAgICAgIDogY2hyICBcIm5vbmVcIiBcIlwiIFwibm9uZVwiIFwibm9uZVwiIC4uLlxuICQgQ29tbWVudHMgICAgICAgICA6IGNociAgXCJub25lXCIgXCJcIiBcIm5vbmVcIiBcIm5vbmVcIiAuLi5cbiAkIERhdGFFbnRyeVBlcnNvbiAgOiBjaHIgIFwiSmVyYWxkIERvc2NoXCIgXCJDYWl0bGluIEJha2VyXCIgXCJDYWl0bGluIEJha2VyXCIgXCJDYWl0bGluIEJha2VyXCIgLi4uXG4gJCBXZWlnaHQgICAgICAgICAgIDogY2hyICBcIlwiIFwiXCIgXCJcIiBcIlwiIC4uLlxuICQgV2luZ0Nob3JkICAgICAgICA6IGNociAgXCJcIiBcIlwiIFwiXCIgXCJcIiAuLi5cbiAkIFRlbXBlcmF0dXJlICAgICAgOiBjaHIgIFwiXCIgXCJcIiBcIlwiIFwiXCIgLi4uXG4gJCBSZWNhcHR1cmVPcmlnaW5hbDogY2hyICBcIlwiIFwiXCIgXCJcIiBcIlwiIC4uLlxuICQgUmVjYXB0dXJlUHJldmlvdXM6IGNociAgXCJcIiBcIlwiIFwiXCIgXCJcIiAuLi5cbiAkIFRhaWxMZW5ndGggICAgICAgOiBjaHIgIFwiXCIgXCJcIiBcIlwiIFwiXCIgLi4uXG4ifQ== -->
+<pre><code>&#39;data.frame&#39;:   15829 obs. of  26 variables:
+ $ bogus            : chr  &quot;.&quot; &quot;.&quot; &quot;.&quot; &quot;.&quot; ...
+ $ Timestamp        : chr  &quot;4/14/2010 13:20:56&quot; &quot;&quot; &quot;5/13/2010 16:00:30&quot; &quot;5/13/2010 16:02:15&quot; ...
+ $ Year             : chr  &quot;1972&quot; &quot;&quot; &quot;1972&quot; &quot;1972&quot; ...
+ $ Day              : chr  &quot;16&quot; &quot;&quot; &quot;16&quot; &quot;16&quot; ...
+ $ Month            : chr  &quot;7&quot; &quot;&quot; &quot;7&quot; &quot;7&quot; ...
+ $ CaptureTime      : chr  &quot;7:00:00&quot; &quot;&quot; &quot;7:00:00&quot; &quot;7:00:00&quot; ...
+ $ SpeciesName      : chr  &quot;Song Sparrow&quot; &quot;&quot; &quot;Song Sparrow&quot; &quot;Field Sparrow&quot; ...
+ $ Sex              : chr  &quot;U&quot; &quot;&quot; &quot;U&quot; &quot;U&quot; ...
+ $ Age              : chr  &quot;AHY (After Hatch Year)&quot; &quot;&quot; &quot;AHY (After Hatch Year)&quot; &quot;AHY (After Hatch Year)&quot; ...
+ $ BandNumber       : chr  &quot;107-151187&quot; &quot;&quot; &quot;107-151187&quot; &quot;1260-74572&quot; ...
+ $ TrapID           : chr  &quot;warbler&quot; &quot;&quot; &quot;Warbler&quot; &quot;Warbler&quot; ...
+ $ Weather          : chr  &quot;none&quot; &quot;&quot; &quot;none&quot; &quot;none&quot; ...
+ $ BandingReport    : chr  &quot;check mark in record&quot; &quot;&quot; &quot;check mark in record&quot; &quot;no check mark in record&quot; ...
+ $ RecaptureYN      : chr  &quot;no check&quot; &quot;&quot; &quot;no check&quot; &quot;check or yes&quot; ...
+ $ RecaptureMonth   : chr  &quot;none&quot; &quot;&quot; &quot;none&quot; &quot;7&quot; ...
+ $ RecaptureDay     : chr  &quot;none&quot; &quot;&quot; &quot;none&quot; &quot;9&quot; ...
+ $ Condition        : chr  &quot;none&quot; &quot;&quot; &quot;none&quot; &quot;none&quot; ...
+ $ Release          : chr  &quot;none&quot; &quot;&quot; &quot;none&quot; &quot;none&quot; ...
+ $ Comments         : chr  &quot;none&quot; &quot;&quot; &quot;none&quot; &quot;none&quot; ...
+ $ DataEntryPerson  : chr  &quot;Jerald Dosch&quot; &quot;Caitlin Baker&quot; &quot;Caitlin Baker&quot; &quot;Caitlin Baker&quot; ...
+ $ Weight           : chr  &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; ...
+ $ WingChord        : chr  &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; ...
+ $ Temperature      : chr  &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; ...
+ $ RecaptureOriginal: chr  &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; ...
+ $ RecapturePrevious: chr  &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; ...
+ $ TailLength       : chr  &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; ...</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>As can be inferred from</p>
+<p>This gives us a good idea of how the data set looks.</p>
+</div>
+<div id="activity" class="section level1">
+<h1>Activity</h1>
+<p>When you’re finished with this activity, you will have a graph that
+shows what time of year various species appear at the Katherine Ordway
+Natural History Study Area in Inver Grove Heights, MN.</p>
+<div id="step-0" class="section level3">
+<h3>Step 0</h3>
+<p>Before we begin, the book gives us some instructions to select a few
+key variables and clean up the date formatting. Use the commands given
+in the book, but be sure to study the functions used so you know what is
+happening. In this case, we select <code>SpeciesName</code>,
+<code>Month</code>, and <code>Day</code>. Then a <code>mutate()</code>
+command converts each variable to character, and then converts the
+resulting “character string” to a number.</p>
 <!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBHZXQgdGhlIGRhdGEgdGFibGUgJiBjbGVhbiB1cCBkYXRlcyAoc2VlIERhdGEgQ29tcHV0aW5nIGVCb29rKVxuXG5cblxuIyBJbnNwZWN0IHJlc3VsdGluZyBkYXRhXG5cblxuYGBgIn0= -->
+<pre class="r"><code># Get the data table &amp; clean up dates (see Data Computing eBook)
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIkFzc2lnbm1lbnQgNjogQmlyZCBTcGVjaWVzIFByb2plY3QiDQpBdXRob3I6ICJOYW5kYWdvcGFsIFBhbmlja2VyIg0KRGF0ZTogIjA3LzIyLzIwMjQiDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQo8dT4qKlN0ZXAgMTogRGF0YSBDbGVhbmluZyBhbmQgUHJlLXByb2Nlc3NpbmcqKjwvdT4NCg0KVGhlIGZpcnN0IHN0ZXAgaW4gdGhpcyBkYXRhIGFuYWx5c2lzIGlzIHRvIGxvYWQgaW4gdGhlIGRhdGEtc2V0Og0KDQpgYGB7cn0NCmxpYnJhcnkodGlkeXZlcnNlKQ0KbGlicmFyeShkZXZ0b29scykNCmRldnRvb2xzOjppbnN0YWxsX2dpdGh1YigibWRiZWNrbWFuL2RjRGF0YSIpDQpsaWJyYXJ5KGRjRGF0YSkNCmRhdGEoIk9yZHdheUJpcmRzIikNCmhlYWQoT3Jkd2F5QmlyZHMpDQpgYGANCg0KQXMgY2FuIGJlIGluZmVycmVkIGZyb20g</div>
+
+
+# Inspect resulting data
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="step-1" class="section level3">
+<h3>Step 1</h3>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyB1bmlxdWUgc3BlY2llcyBpbiBvcmlnaW5hbCBkYXRhIChpbmNsdWRpbmcgbWlzLXNwZWxsaW5ncylcblxuXG5cbiMgdW5pcXVlIHNwZWNpZXMgaW4gdGhlIGNsZWFuIGxpc3RcblxuXG5cbmBgYCJ9 -->
+<pre class="r"><code># unique species in original data (including mis-spellings)
+
+
+
+# unique species in the clean list
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="step-2" class="section level3">
+<h3>Step 2</h3>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBpbnNwZWN0IE9yZHdheVNwZWNpZXNOYW1lc1xuXG5cbiMgaW5uZXIgam9pblxuXG5cblxuXG4jIGluc3BlY3QgdGhlIGRhdGEgYWZ0ZXIgdGhlIGpvaW5cblxuXG5gYGAifQ== -->
+<pre class="r"><code># inspect OrdwaySpeciesNames
+
+
+# inner join
+
+
+
+
+# inspect the data after the join
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="step-3" class="section level3">
+<h3>Step 3</h3>
+<p>We want to identify the top 5-6 bird species sighted at the Katherine
+Ordway Natural History Study Area.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBjb3VudCBzaWdodGluZ3MgYnkgc3BlY2llcyBpbiBkZXNjZW5kaW5nIG9yZGVyXG5cblxuXG5cbiMgYSBoaW50IGluIHRoZSB0ZXh0IGJvb2sgcmVjb21tZW5kcyBkaXNwbGF5aW5nIHRoZSB0b3AgMTAgc3BlY2llcyB0byBjaG9vc2Ugb3VyIHRocmVzaG9sZFxuXG5cblxuIyBkZWZpbmUgYSBzaWdodGluZ3MgdGhyZXNob2xkOyBwcm9kdWNlIGEgdGFibGUgd2l0aCBvbmx5IGJpcmRzIGJlbG9uZ2luZyB0byBtYWpvciBzcGVjaWVzXG5cblxuXG5cbmBgYCJ9 -->
+<pre class="r"><code># count sightings by species in descending order
+
+
+
+
+# a hint in the text book recommends displaying the top 10 species to choose our threshold
+
+
+
+# define a sightings threshold; produce a table with only birds belonging to major species
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="step-4" class="section level3">
+<h3>Step 4</h3>
+<p>We now want to produce a month-by-month count for each of the major
+species, and then construct a chart to tell the story of what time of
+year the various species appear.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBwcmVwYXJlIGdseXBoLXJlYWR5IGRhdGEgdGFibGUgY2FsbGVkIGBCeU1vbnRoYFxuXG5cblxuYGBgIn0= -->
+<pre class="r"><code># prepare glyph-ready data table called `ByMonth`
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Now use the ggplot template below to generate the desired graph.
+(Remark you can also use esquisser or mplot to create a line chart
+instead of the barchart)</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBnZ3Bsb3QgY29tbWFuZHNcblxuQnlNb250aCAlPiUgXG4gIGdncGxvdChhZXMoeCA9IE1vbnRoLCB5ID0gY291bnQsIGNvbG9yID0gU3BlY2llcykpICsgXG4gIGdlb21fbGluZSgpXG5cbkJ5TW9udGggJT4lIGdncGxvdChhZXMoeD1Nb250aCx5PWNvdW50ICxmaWxsPVNwZWNpZXMpKSArXG4gIGdlb21fYmFyKHN0YXQ9J2lkZW50aXR5Jyxwb3NpdGlvbj0nc3RhY2snLCB3aWR0aD0uOSkgXG5cbmBgYCJ9 -->
+<pre class="r"><code># ggplot commands
+
+ByMonth %&gt;% 
+  ggplot(aes(x = Month, y = count, color = Species)) + 
+  geom_line()
+
+ByMonth %&gt;% ggplot(aes(x=Month,y=count ,fill=Species)) +
+  geom_bar(stat=&#39;identity&#39;,position=&#39;stack&#39;, width=.9) 
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>According to the graph, we can answer the questions posed:</p>
+<div id="which-species-are-present-year-round" class="section level5">
+<h5>1. Which species are present year-round?</h5>
+</div>
+<div id="which-species-are-migratory-that-is-primarily-present-in-one-or-two-seasons" class="section level5">
+<h5>2. Which species are migratory, that is, primarily present in one or
+two seasons?</h5>
+</div>
+<div id="what-is-the-peak-month-for-each-major-species-bullet-list" class="section level5">
+<h5>3. What is the peak month for each major species? (bullet list)</h5>
+</div>
+<div id="which-major-species-are-seen-in-good-numbers-for-at-least-6-months-of-the-year" class="section level5">
+<h5>4. Which major species are seen in good numbers for at least 6
+months of the year?</h5>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+</div>
+</div>
+</div>
+
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIkFjdGl2aXR5OiBCaXJkIFNwZWNpZXMiDQphdXRob3I6ICJOYW5kYWdvcGFsIFBhbmlja2VyIg0KZGF0ZTogIjA3LzIyLzIwMjQiDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQoNCiMgU2V0IFVwDQoNCmBgYHtyfQ0KbGlicmFyeSh0aWR5dmVyc2UpDQpsaWJyYXJ5KGRjRGF0YSkNCmRhdGEoIk9yZHdheUJpcmRzIikNCmhlYWQoT3Jkd2F5QmlyZHMpDQpgYGANCmBgYHtyfQ0Kc3RyKE9yZHdheUJpcmRzKQ0KYGBgDQpUaGlzIGdpdmVzIHVzIGEgZ29vZCBpZGVhIG9mIGhvdyB0aGUgZGF0YSBzZXQgbG9va3MuIA0KDQojIEFjdGl2aXR5DQoNCldoZW4geW91J3JlIGZpbmlzaGVkIHdpdGggdGhpcyBhY3Rpdml0eSwgeW91IHdpbGwgaGF2ZSBhIGdyYXBoIHRoYXQgc2hvd3Mgd2hhdCB0aW1lIG9mIHllYXIgdmFyaW91cyBzcGVjaWVzIGFwcGVhciBhdCB0aGUgS2F0aGVyaW5lIE9yZHdheSBOYXR1cmFsIEhpc3RvcnkgU3R1ZHkgQXJlYSBpbiBJbnZlciBHcm92ZSBIZWlnaHRzLCBNTi4NCg0KIyMjIFN0ZXAgMA0KDQpCZWZvcmUgd2UgYmVnaW4sIHRoZSBib29rIGdpdmVzIHVzIHNvbWUgaW5zdHJ1Y3Rpb25zIHRvIHNlbGVjdCBhIGZldyBrZXkgdmFyaWFibGVzIGFuZCBjbGVhbiB1cCB0aGUgZGF0ZSBmb3JtYXR0aW5nLiAgVXNlIHRoZSBjb21tYW5kcyBnaXZlbiBpbiB0aGUgYm9vaywgYnV0IGJlIHN1cmUgdG8gc3R1ZHkgdGhlIGZ1bmN0aW9ucyB1c2VkIHNvIHlvdSBrbm93IHdoYXQgaXMgaGFwcGVuaW5nLiAgSW4gdGhpcyBjYXNlLCB3ZSBzZWxlY3QgYFNwZWNpZXNOYW1lYCwgYE1vbnRoYCwgYW5kIGBEYXlgLiBUaGVuIGEgYG11dGF0ZSgpYCBjb21tYW5kIGNvbnZlcnRzIGVhY2ggdmFyaWFibGUgdG8gY2hhcmFjdGVyLCBhbmQgdGhlbiBjb252ZXJ0cyB0aGUgcmVzdWx0aW5nICJjaGFyYWN0ZXIgc3RyaW5nIiB0byBhIG51bWJlci4NCg0KYGBge3J9DQojIEdldCB0aGUgZGF0YSB0YWJsZSAmIGNsZWFuIHVwIGRhdGVzIChzZWUgRGF0YSBDb21wdXRpbmcgZUJvb2spDQoNCg0KDQojIEluc3BlY3QgcmVzdWx0aW5nIGRhdGENCg0KDQpgYGANCg0KDQoNCiMjIyBTdGVwIDENCg0KDQoNCg0KYGBge3J9DQojIHVuaXF1ZSBzcGVjaWVzIGluIG9yaWdpbmFsIGRhdGEgKGluY2x1ZGluZyBtaXMtc3BlbGxpbmdzKQ0KDQoNCg0KIyB1bmlxdWUgc3BlY2llcyBpbiB0aGUgY2xlYW4gbGlzdA0KDQoNCg0KYGBgDQoNCg0KIyMjIFN0ZXAgMg0KICANCg0KDQoNCmBgYHtyfQ0KIyBpbnNwZWN0IE9yZHdheVNwZWNpZXNOYW1lcw0KDQoNCiMgaW5uZXIgam9pbg0KDQoNCg0KDQojIGluc3BlY3QgdGhlIGRhdGEgYWZ0ZXIgdGhlIGpvaW4NCg0KDQpgYGANCg0KDQojIyMgU3RlcCAzDQoNCldlIHdhbnQgdG8gaWRlbnRpZnkgdGhlIHRvcCA1LTYgYmlyZCBzcGVjaWVzIHNpZ2h0ZWQgYXQgdGhlIEthdGhlcmluZSBPcmR3YXkgTmF0dXJhbCBIaXN0b3J5IFN0dWR5IEFyZWEuDQoNCmBgYHtyfQ0KIyBjb3VudCBzaWdodGluZ3MgYnkgc3BlY2llcyBpbiBkZXNjZW5kaW5nIG9yZGVyDQoNCg0KDQoNCiMgYSBoaW50IGluIHRoZSB0ZXh0IGJvb2sgcmVjb21tZW5kcyBkaXNwbGF5aW5nIHRoZSB0b3AgMTAgc3BlY2llcyB0byBjaG9vc2Ugb3VyIHRocmVzaG9sZA0KDQoNCg0KIyBkZWZpbmUgYSBzaWdodGluZ3MgdGhyZXNob2xkOyBwcm9kdWNlIGEgdGFibGUgd2l0aCBvbmx5IGJpcmRzIGJlbG9uZ2luZyB0byBtYWpvciBzcGVjaWVzDQoNCg0KDQoNCmBgYA0KDQoNCiMjIyBTdGVwIDQNCg0KV2Ugbm93IHdhbnQgdG8gcHJvZHVjZSBhIG1vbnRoLWJ5LW1vbnRoIGNvdW50IGZvciBlYWNoIG9mIHRoZSBtYWpvciBzcGVjaWVzLCBhbmQgdGhlbiBjb25zdHJ1Y3QgYSBjaGFydCB0byB0ZWxsIHRoZSBzdG9yeSBvZiB3aGF0IHRpbWUgb2YgeWVhciB0aGUgdmFyaW91cyBzcGVjaWVzIGFwcGVhci4NCg0KYGBge3J9DQojIHByZXBhcmUgZ2x5cGgtcmVhZHkgZGF0YSB0YWJsZSBjYWxsZWQgYEJ5TW9udGhgDQoNCg0KDQpgYGANCg0KTm93IHVzZSB0aGUgZ2dwbG90IHRlbXBsYXRlIGJlbG93IHRvIGdlbmVyYXRlIHRoZSBkZXNpcmVkIGdyYXBoLiAoUmVtYXJrIHlvdSBjYW4gYWxzbyB1c2UgZXNxdWlzc2VyIG9yIG1wbG90IHRvIGNyZWF0ZSBhIGxpbmUgY2hhcnQgaW5zdGVhZCBvZiB0aGUgYmFyY2hhcnQpDQoNCg0KDQpgYGB7cn0NCiMgZ2dwbG90IGNvbW1hbmRzDQoNCkJ5TW9udGggJT4lIA0KICBnZ3Bsb3QoYWVzKHggPSBNb250aCwgeSA9IGNvdW50LCBjb2xvciA9IFNwZWNpZXMpKSArIA0KICBnZW9tX2xpbmUoKQ0KDQpCeU1vbnRoICU+JSBnZ3Bsb3QoYWVzKHg9TW9udGgseT1jb3VudCAsZmlsbD1TcGVjaWVzKSkgKw0KICBnZW9tX2JhcihzdGF0PSdpZGVudGl0eScscG9zaXRpb249J3N0YWNrJywgd2lkdGg9LjkpIA0KDQpgYGANCg0KQWNjb3JkaW5nIHRvIHRoZSBncmFwaCwgd2UgY2FuIGFuc3dlciB0aGUgcXVlc3Rpb25zIHBvc2VkOg0KDQojIyMjIyAxLiBXaGljaCBzcGVjaWVzIGFyZSBwcmVzZW50IHllYXItcm91bmQ/ICANCg0KDQoNCiMjIyMjIDIuIFdoaWNoIHNwZWNpZXMgYXJlIG1pZ3JhdG9yeSwgdGhhdCBpcywgcHJpbWFyaWx5IHByZXNlbnQgaW4gb25lIG9yIHR3byBzZWFzb25zPw0KDQoNCg0KDQojIyMjIyAzLiBXaGF0IGlzIHRoZSBwZWFrIG1vbnRoIGZvciBlYWNoIG1ham9yIHNwZWNpZXM/IChidWxsZXQgbGlzdCkNCg0KDQoNCg0KIyMjIyMgNC4gV2hpY2ggbWFqb3Igc3BlY2llcyBhcmUgc2VlbiBpbiBnb29kIG51bWJlcnMgZm9yIGF0IGxlYXN0IDYgbW9udGhzIG9mIHRoZSB5ZWFyPw0KDQoNCg0KYGBge3J9DQoNCmBgYA0K</div>
 
 
 
