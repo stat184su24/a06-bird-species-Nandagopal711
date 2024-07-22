@@ -28,15 +28,23 @@ When you're finished with this activity, you will have a graph that shows what t
 Before we begin, the book gives us some instructions to select a few key variables and clean up the date formatting.  Use the commands given in the book, but be sure to study the functions used so you know what is happening.  In this case, we select `SpeciesName`, `Month`, and `Day`. Then a `mutate()` command converts each variable to character, and then converts the resulting "character string" to a number.
 
 ```{r}
-# Get the data table & clean up dates (see Data Computing eBook)
+OrdwayBirds <-
+  OrdwayBirds %>%
+  select( SpeciesName, Month, Day ) %>%
+  mutate( Month = as.numeric(as.character(Month)), 
+          Day = as.numeric(as.character(Day)))
 
-
-
-# Inspect resulting data
-
-
+print(OrdwayBirds)
 ```
+The month and day columns have now been converted into numerical values.
 
+
+**Now, we have to import the clean data-set as well**
+
+```{r}
+data("OrdwaySpeciesNames")
+head(OrdwaySpeciesNames)
+```
 
 
 ### Step 1
@@ -47,14 +55,16 @@ Before we begin, the book gives us some instructions to select a few key variabl
 ```{r}
 # unique species in original data (including mis-spellings)
 
-
-
-# unique species in the clean list
-
-
+n_distinct(OrdwayBirds$SpeciesName)
 
 ```
+So we can see that there are 275 unique categories in the SpeciesName categorical variable.
 
+```{r}
+# unique species in the clean list
+n_distinct(OrdwaySpeciesNames$SpeciesNameCleaned)
+```
+There are 109 unique categories in the SpeciesNameCleaned categorical variab
 
 ### Step 2
   
@@ -63,8 +73,7 @@ Before we begin, the book gives us some instructions to select a few key variabl
 
 ```{r}
 # inspect OrdwaySpeciesNames
-
-
+glimpse(OrdwaySpeciesNames)
 # inner join
 
 
