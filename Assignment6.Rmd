@@ -1,0 +1,21 @@
+---
+title: "Assignment 6: Bird Species Project"
+Author: "Nandagopal Panicker"
+Date: "07/22/2024"
+output: html_notebook
+---
+
+<u>**Step 1: Data Cleaning and Pre-processing**</u>
+
+The first step in this data analysis is to load in the data-set:
+
+```{r}
+library(tidyverse)
+library(devtools)
+devtools::install_github("mdbeckman/dcData")
+library(dcData)
+data("OrdwayBirds")
+head(OrdwayBirds)
+```
+
+As can be inferred from 
