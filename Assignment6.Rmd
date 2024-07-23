@@ -74,11 +74,11 @@ There are 109 unique categories in the 'SpeciesNameCleaned' categorical variable
 # inspect OrdwaySpeciesNames
 glimpse(OrdwaySpeciesNames)
 # inner join
-
+Joined <- OrdwayBirds %>%
+  inner_join(OrdwaySpeciesNames, by = c("SpeciesName" = "SpeciesNameCleaned"))
 
 # inspect the data after the join
-
-
+head(Joined)
 ```
 
 
