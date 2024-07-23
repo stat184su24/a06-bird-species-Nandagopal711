@@ -53,30 +53,27 @@ head(OrdwaySpeciesNames)
 
 
 ```{r}
-# unique species in original data (including mis-spellings)
+# unique species in original data (including misspellings)
 
 n_distinct(OrdwayBirds$SpeciesName)
 
 ```
-So we can see that there are 275 unique categories in the SpeciesName categorical variable.
+So we can see that there are 275 unique categories in the 'SpeciesName' categorical variable.
 
 ```{r}
 # unique species in the clean list
 n_distinct(OrdwaySpeciesNames$SpeciesNameCleaned)
 ```
-There are 109 unique categories in the SpeciesNameCleaned categorical variab
+There are 109 unique categories in the 'SpeciesNameCleaned' categorical variable.
 
-### Step 2
+### Step 2 : Joining the data-sets.
   
-
 
 
 ```{r}
 # inspect OrdwaySpeciesNames
 glimpse(OrdwaySpeciesNames)
 # inner join
-
-
 
 
 # inspect the data after the join
