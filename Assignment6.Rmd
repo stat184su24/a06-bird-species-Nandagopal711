@@ -162,12 +162,38 @@ Therefore, from looking at the graph and analyzing it further using the aforemen
 
 ##### 2. Which species are migratory, that is, primarily present in one or two seasons?
 
-
-
+* Slate-colored Junco is primarily present in one or two seasons(Winter) until March.
+* Catbirds, Chipping Sparrows, House Wren, Myrtle Warbler, and Robins are all seen only in the summer months(one season).
+* Song sparrows are there from March through October.
 
 ##### 3. What is the peak month for each major species? (bullet list)
 
+* American Goldfinch - October
+* Black-capped Chickadee - November
+* Catbird - May
+* Chipping Sparrow - September
+* House Wren - July
+* Myrtle Warbler - October
+* Robin - May
+* Slate-colored Junco - October
+* Song Sparrow - April
+* White-breasted Nuthatch - October
 
+
+Double checker : 
+```{r}
+
+species_name <- "White-breasted Nuthatch"
+species_data <- Joined %>%
+  filter(SpeciesName == species_name)
+species_monthly_count <- species_data %>%
+  group_by(Month) %>%
+  summarise(count = n()) %>%
+  ungroup()
+highest_occurring_month <- species_monthly_count %>%
+  filter(count == max(count))
+print(highest_occurring_month)
+```
 
 
 ##### 4. Which major species are seen in good numbers for at least 6 months of the year?
@@ -175,5 +201,11 @@ Therefore, from looking at the graph and analyzing it further using the aforemen
 
 
 ```{r}
+species_months_count <- ByMonth %>%
+  group_by(SpeciesName) %>%
+  summarise(months_present = n_distinct(Month)) %>%
+  filter(months_present >= 6)
 
+print(species_months_count)
 ```
+The results are displayed above.
