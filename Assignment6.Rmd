@@ -88,18 +88,24 @@ We want to identify the top 5-6 bird species sighted at the Katherine Ordway Nat
 
 ```{r}
 # count sightings by species in descending order
-
-
-
+library(tidyverse)
+species_count <- Joined %>%
+  count(SpeciesName, sort = TRUE)
 
 # a hint in the text book recommends displaying the top 10 species to choose our threshold
 
-
+top_10 <- head(species_count, 10)
+print(top_10)
 
 # define a sightings threshold; produce a table with only birds belonging to major species
+threshold <- top_10 %>%
+  summarise(min_count = min(n)) %>%
+  pull(min_count)
 
+major_species_table <- Joined %>%
+  filter(SpeciesName %in% top_10$SpeciesName)
 
-
+print(major_species_table)
 
 ```
 
@@ -110,7 +116,10 @@ We now want to produce a month-by-month count for each of the major species, and
 
 ```{r}
 # prepare glyph-ready data table called `ByMonth`
-
+ByMonth <- major_species_table %>%
+  group_by(SpeciesName, Month) %>%
+  summarise(count = n()) %>%
+  ungroup()
 
 
 ```
@@ -123,10 +132,10 @@ Now use the ggplot template below to generate the desired graph. (Remark you can
 # ggplot commands
 
 ByMonth %>% 
-  ggplot(aes(x = Month, y = count, color = Species)) + 
+  ggplot(aes(x = Month, y = count, color = SpeciesName)) + 
   geom_line()
 
-ByMonth %>% ggplot(aes(x=Month,y=count ,fill=Species)) +
+ByMonth %>% ggplot(aes(x=Month,y=count ,fill=SpeciesName)) +
   geom_bar(stat='identity',position='stack', width=.9) 
 
 ```
@@ -135,7 +144,21 @@ According to the graph, we can answer the questions posed:
 
 ##### 1. Which species are present year-round?  
 
+```{r}
+year_round_species <- ByMonth %>%
+  group_by(SpeciesName) %>%
+  summarise(months_present = n_distinct(Month)) %>%
+  filter(months_present == 12) %>%
+  pull(SpeciesName)
 
+
+print(year_round_species)
+```
+Therefore, from looking at the graph and analyzing it further using the aforementioned code, we can ascertain that the species that are present year round are:
+
+* American Goldfinch
+* Black-capped Chickadee
+* White-breasted Nuthatch
 
 ##### 2. Which species are migratory, that is, primarily present in one or two seasons?
 
